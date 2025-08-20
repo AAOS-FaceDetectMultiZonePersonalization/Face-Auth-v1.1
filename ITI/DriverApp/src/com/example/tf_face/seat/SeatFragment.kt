@@ -235,27 +235,41 @@ private lateinit var databaseInitializer: DatabaseInitializer
         setVhalProperty(VENDOR_EXTENSION_SEAT_BASE_CONTROL_PROPERTY, position.roundToInt())
     }
 
-   private fun saveSeatSettings() {
-        val angle = seatController.getCurrentAngle()
-        val position = seatController.getCurrentHorizontalOffset()
-
-        // Save to SharedPreferences
-        val prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        prefs.edit().apply {
-            putFloat(KEY_BACKREST_ANGLE, angle)
-            putFloat(KEY_BASE_POSITION, position)
-            commit() 
-        }
-
-        // Save to database if not guest
-        if (userName != "Guest User") {
-            CoroutineScope(Dispatchers.Main).launch {
-                databaseInitializer.saveSeatSettingsToDatabase(userName, angle, position)
+ private fun saveSeatSettings() {
+    val backrestAngle = seatController.getCurrentAngle()
+    val seatPosition = seatController.getCurrentHorizontalOffset()
+    Log.d("SeatFragment", "Saving seat settings: backrestAngle=$backrestAngle, seatPosition=$seatPosition")
+    val prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+    with(prefs.edit()) {
+        putFloat(KEY_BACKREST_ANGLE, backrestAngle)
+        putFloat(KEY_BASE_POSITION, seatPosition)
+        apply()
+    }
+    Log.d("SeatFragment", "Saved to SharedPreferences")
+    Log.d("SeatFragment", "Current userName: $userName")
+    if (userName != "Guest User") {
+        Log.d("SeatFragment", "Attempting to save seat settings to database for $userName")
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val userExists = databaseInitializer.getUserDetails(userName) != null
+                Log.d("SeatFragment", "User $userName exists in database: $userExists")
+                if (!userExists) {
+                    Log.e("SeatFragment", "User $userName not found in database, cannot save seat settings")
+                    return@launch
+                }
+                val success = databaseInitializer.saveSeatSettingsToDatabase(userName, backrestAngle, seatPosition)
+                Log.d("SeatFragment", "Database save result for $userName: $success")
+                if (!success) {
+                    Log.e("SeatFragment", "Database save returned false for $userName")
+                }
+            } catch (e: Exception) {
+                Log.e("SeatFragment", "Exception in database save for $userName", e)
             }
         }
-
-        Log.d("SeatFragment", "Saved seat settings: angle=$angle, position=$position")
+    } else {
+        Log.d("SeatFragment", "Skipping database save for Guest User")
     }
+}
 
 
     @RequiresPermission(Manifest.permission.VIBRATE)

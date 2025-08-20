@@ -103,16 +103,29 @@ class GreetingActivity : AppCompatActivity() {
                 intent.getFloatExtra("user_weight", 70f)
             )
         }
+
         navAc.setOnClickListener {
-            Log.d("GreetingActivity", "NavAc clicked")
-            updateNavigationSelection(navAc)
-            loadFragment(AcFragment())
+        Log.d("GreetingActivity", "NavAc clicked with user_name: ${intent.getStringExtra("user_name")}")
+        updateNavigationSelection(navAc)
+        val acFragment = AcFragment().apply {
+            arguments = Bundle().apply {
+            putString("user_name", intent.getStringExtra("user_name") ?: "Guest User")
         }
+        }
+        loadFragment(acFragment)
+        }
+
         navSeat.setOnClickListener {
-            Log.d("GreetingActivity", "NavSeat clicked")
+            Log.d("GreetingActivity", "NavSeat clicked with user_name: ${intent.getStringExtra("user_name")}")
             updateNavigationSelection(navSeat)
-            loadFragment(SeatFragment())
+            val seatFragment = SeatFragment().apply {
+                arguments = Bundle().apply {
+                    putString("user_name", intent.getStringExtra("user_name") ?: "Guest User")
+                }
+            }
+            loadFragment(seatFragment)
         }
+
         navAppGrid.setOnClickListener {
             Log.d("GreetingActivity", "NavAppGrid clicked")
             updateNavigationSelection(navAppGrid)

@@ -134,6 +134,7 @@ class DatabaseInitializer(private val context: Context) {
             false
         }
     }
+    
 
     suspend fun saveAllSettingsToDatabase(name: String, fanSpeed: Int, temperature: Int, seatTemperature: Int, backrestAngle: Float, seatPosition: Float): Boolean = withContext(Dispatchers.IO) {
         try {

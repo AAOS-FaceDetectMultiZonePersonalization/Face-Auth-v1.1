@@ -45,6 +45,7 @@ interface FaceDao {
     @Query("UPDATE FaceEntity SET fanSpeed = :fanSpeed, temperature = :temperature, seatTemperature = :seatTemperature WHERE name = :name")
     suspend fun updateAcSettings(name: String, fanSpeed: Int, temperature: Int, seatTemperature: Int)
 
+
     @Query("UPDATE FaceEntity SET backrestAngle = :backrestAngle, seatPosition = :seatPosition WHERE name = :name")
     suspend fun updateSeatSettings(name: String, backrestAngle: Float, seatPosition: Float)
 

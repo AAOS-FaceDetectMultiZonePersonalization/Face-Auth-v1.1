@@ -213,24 +213,40 @@ class AcFragment : Fragment() {
     }
 
     private fun saveAcSettings(fanSpeed: Int, temperature: Int, seatTemperature: Int) {
-        // Save to SharedPreferences
-        val prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        with(prefs.edit()) {
-            putInt(KEY_FAN_SPEED, fanSpeed)
-            putInt(KEY_TEMPERATURE, temperature)
-            putInt(KEY_SEAT_TEMPERATURE, seatTemperature)
-            apply()
-        }
+    Log.d("AcFragment", "Saving AC settings: fanSpeed=$fanSpeed, temperature=$temperature, seatTemperature=$seatTemperature")
+    val prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+    with(prefs.edit()) {
+        putInt(KEY_FAN_SPEED, fanSpeed)
+        putInt(KEY_TEMPERATURE, temperature)
+        putInt(KEY_SEAT_TEMPERATURE, seatTemperature)
+        apply()
+    }
+    Log.d("AcFragment", "Saved to SharedPreferences")
 
-        // Save to database if not guest
-        if (userName != "Guest User") {
-            CoroutineScope(Dispatchers.Main).launch {
-                databaseInitializer.saveAcSettingsToDatabase(userName, fanSpeed, temperature, seatTemperature)
+    Log.d("AcFragment", "Current userName: $userName")
+    if (userName != "Guest User") {
+        Log.d("AcFragment", "Attempting to save AC settings to database for $userName")
+        CoroutineScope(Dispatchers.IO).launch { // Changed to Dispatchers.IO for database operations
+            try {
+                val userExists = databaseInitializer.getUserDetails(userName) != null
+                Log.d("AcFragment", "User $userName exists in database: $userExists")
+                if (!userExists) {
+                    Log.e("AcFragment", "User $userName not found in database, cannot save AC settings")
+                    return@launch
+                }
+                val success = databaseInitializer.saveAcSettingsToDatabase(userName, fanSpeed, temperature, seatTemperature)
+                Log.d("AcFragment", "Database save result for $userName: $success")
+                if (!success) {
+                    Log.e("AcFragment", "Database save returned false for $userName")
+                }
+            } catch (e: Exception) {
+                Log.e("AcFragment", "Exception in database save for $userName", e)
             }
         }
-
-        Log.d("AcFragment", "Saved AC settings: fanSpeed=$fanSpeed, temperature=$temperature, seatTemperature=$seatTemperature")
+    } else {
+        Log.d("AcFragment", "Skipping database save for Guest User")
     }
+}
 
     private fun resetToDefaults() {
         // Set seek bars to default values
