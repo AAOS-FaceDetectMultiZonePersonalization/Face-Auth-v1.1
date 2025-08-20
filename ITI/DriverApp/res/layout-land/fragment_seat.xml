@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/seatFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_whole_background"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/seatContainer"
+            android:layout_width="793dp"
+            android:layout_height="568dp"
+            android:layout_marginBottom="12dp">
+
+            <!-- Top Boundary -->
+            <View
+                android:id="@+id/boundaryTop"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignTop="@id/imageView2"
+                android:alpha="0.3"
+                android:background="#FF0000"
+                android:visibility="invisible" />
+
+            <!-- Bottom Boundary -->
+            <View
+                android:id="@+id/boundaryBottom"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignBottom="@id/imageView2"
+                android:alpha="0.3"
+                android:background="#FF0000"
+                android:visibility="invisible" />
+
+            <!-- Left Boundary -->
+            <View
+                android:id="@+id/boundaryLeft"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@id/imageView2"
+                android:alpha="0.3"
+                android:background="#FF0000"
+                android:visibility="invisible" />
+
+            <!-- Right Boundary -->
+            <View
+                android:id="@+id/boundaryRight"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_alignRight="@id/imageView2"
+                android:alpha="0.3"
+                android:background="#FF0000"
+                android:visibility="invisible" />
+
+            <!-- Seat Images -->
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="465dp"
+                android:layout_height="458dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="278dp"
+                android:layout_marginBottom="26dp"
+                app:srcCompat="@drawable/base_seat" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="313dp"
+                android:layout_height="276dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="79dp"
+                android:layout_marginBottom="237dp"
+                app:srcCompat="@drawable/arch_background" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="40dp"
+                android:layout_height="39dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="247dp"
+                android:layout_marginBottom="493dp"
+                app:srcCompat="@drawable/arch_point_active" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="38dp"
+                android:layout_height="51dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="161dp"
+                android:layout_marginBottom="421dp"
+                app:srcCompat="@drawable/arch_point" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="37dp"
+                android:layout_height="51dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="115dp"
+                android:layout_marginBottom="302dp"
+                app:srcCompat="@drawable/arch_point"
+                android:contentDescription="Angle indicator" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="409dp"
+                android:layout_height="403dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="202dp"
+                android:layout_marginEnd="183dp"
+                app:srcCompat="@drawable/backrest_forward" />
+
+            <TextView
+                android:id="@+id/seatTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="122dp"
+                android:layout_marginEnd="510dp"
+                android:text="SEAT ADJUSTMENT"
+                android:textColor="@color/time"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/manualModeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seatTitle"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:text="MANUAL MODE"
+                android:textColor="#AAAAAA"
+                android:textSize="14sp" />
+
+            <!-- Up/Down Buttons -->
+            <LinearLayout
+                android:id="@+id/verticalControls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/manualModeLabel"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnUp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/circle_button_bg"
+                    android:contentDescription="Move Up"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_arrow_up" />
+
+                <ImageButton
+                    android:id="@+id/btnDown"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/circle_button_bg"
+                    android:contentDescription="Move Down"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_arrow_down" />
+            </LinearLayout>
+
+            <!-- Left/Right Buttons -->
+            <LinearLayout
+                android:id="@+id/horizontalControls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/presetButtons"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnLeft"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_button_bg"
+                    android:contentDescription="Move Left"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_arrow_right" />
+
+                <ImageButton
+                    android:id="@+id/btnRight"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/circle_button_bg"
+                    android:contentDescription="Move Right"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_arrow_left" />
+            </LinearLayout>
+
+            <!-- Preset Buttons -->
+            <LinearLayout
+                android:id="@+id/presetButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn0"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:background="@null"
+                    android:contentDescription="Preset 0"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_number_1" />
+
+                <ImageButton
+                    android:id="@+id/btn2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:background="@null"
+                    android:contentDescription="Preset 2"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/i2" />
+
+                <ImageButton
+                    android:id="@+id/btn3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:background="@null"
+                    android:contentDescription="Preset 3"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/three" />
+
+                <ImageButton
+                    android:id="@+id/btnReset"
+                    android:layout_width="66dp"
+                    android:layout_height="53dp"
+                    android:layout_margin="8dp"
+                    android:background="@null"
+                    android:contentDescription="Reset"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/light_red" />
+            </LinearLayout>
+
+            <!-- Degree Indicator -->
+            <TextView
+                android:id="@+id/angleDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="70dp"
+                android:layout_marginBottom="445dp"
+                android:text="90°"
+                android:textColor="@color/red"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

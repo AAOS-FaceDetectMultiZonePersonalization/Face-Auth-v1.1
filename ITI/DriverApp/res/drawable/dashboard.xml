@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="1976dp"
+    android:height="1016dp"
+    android:viewportWidth="1976"
+    android:viewportHeight="1016">
+  <!-- Black background rectangle -->
+  <path
+      android:pathData="M0,0H1976V1016H0V0Z"
+      android:fillColor="#000000"/>
+
+<!--  <path-->
+<!--      android:pathData="M0,0H1976V1016H0V0Z"-->
+<!--      android:strokeWidth="28"-->
+<!--      android:fillColor="#00000000"-->
+<!--      android:strokeColor="#FF5555"/>-->
+  <!-- Stars (small white circles) -->
+  <path
+      android:pathData="M100,100m-5,0a5,5 0 1,0 10,0a5,5 0 1,0 -10,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M200,150m-3,0a3,3 0 1,0 6,0a3,3 0 1,0 -6,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M300,80m-4,0a4,4 0 1,0 8,0a4,4 0 1,0 -8,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M400,200m-2,0a2,2 0 1,0 4,0a2,2 0 1,0 -4,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M500,120m-5,0a5,5 0 1,0 10,0a5,5 0 1,0 -10,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M600,180m-3,0a3,3 0 1,0 6,0a3,3 0 1,0 -6,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M700,90m-4,0a4,4 0 1,0 8,0a4,4 0 1,0 -8,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M800,160m-2,0a2,2 0 1,0 4,0a2,2 0 1,0 -4,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M900,110m-5,0a5,5 0 1,0 10,0a5,5 0 1,0 -10,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1000,190m-3,0a3,3 0 1,0 6,0a3,3 0 1,0 -6,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1100,130m-4,0a4,4 0 1,0 8,0a4,4 0 1,0 -8,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1200,170m-2,0a2,2 0 1,0 4,0a2,2 0 1,0 -4,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1300,100m-5,0a5,5 0 1,0 10,0a5,5 0 1,0 -10,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1400,150m-3,0a3,3 0 1,0 6,0a3,3 0 1,0 -6,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1500,80m-4,0a4,4 0 1,0 8,0a4,4 0 1,0 -8,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1600,200m-2,0a2,2 0 1,0 4,0a2,2 0 1,0 -4,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1700,120m-5,0a5,5 0 1,0 10,0a5,5 0 1,0 -10,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1800,180m-3,0a3,3 0 1,0 6,0a3,3 0 1,0 -6,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M1900,90m-4,0a4,4 0 1,0 8,0a4,4 0 1,0 -8,0"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M950,250m-2,0a2,2 0 1,0 4,0a2,2 0 1,0 -4,0"
+      android:fillColor="#FFFFFF"/>
+</vector>

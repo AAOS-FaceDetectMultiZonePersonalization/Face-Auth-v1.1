@@ -1,0 +1,70 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Arc path -->
+    <path
+        android:name="arc"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M50,150 A100,100 0 0,1 150,150" />
+
+    <!-- Labels -->
+    <!-- 30° -->
+    <group android:translateX="60" android:translateY="145">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M0,0 h20"
+            android:strokeWidth="1" />
+        <group android:translateX="10" android:translateY="15">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M0,0" />
+            <clip-path android:pathData=""/>
+            <aapt:attr name="android:text">
+                <string>30°</string>
+            </aapt:attr>
+        </group>
+    </group>
+
+    <!-- 50° -->
+    <group android:translateX="100" android:translateY="120">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M0,0 h20"
+            android:strokeWidth="1" />
+        <group android:translateX="10" android:translateY="15">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M0,0" />
+            <aapt:attr name="android:text">
+                <string>50°</string>
+            </aapt:attr>
+        </group>
+    </group>
+
+    <!-- 70° -->
+    <group android:translateX="140" android:translateY="145">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M0,0 h20"
+            android:strokeWidth="1" />
+        <group android:translateX="10" android:translateY="15">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M0,0" />
+            <aapt:attr name="android:text">
+                <string>70°</string>
+            </aapt:attr>
+        </group>
+    </group>
+
+    <!-- Circular indicator for current angle (e.g., 70°) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M145,145 A5,5 0 1,0 155,155 A5,5 0 1,0 145,145" />
+</vector>

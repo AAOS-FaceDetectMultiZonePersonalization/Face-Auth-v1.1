@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+     <color name="icons_colors">#ff3131</color>
+    <color name="blue">#2196F3</color>
+    <color name="green">#4CAF50</color>
+    <color name="yellow">#FFC107</color>
+    <color name="red">#F44336</color>
+    <color name="cyan">#01E6DE</color>
+    <color name="ready_green">#32D74B</color>
+    <color name="grey">#808080</color>
+    <color name="default_nav_color">#FF5555</color>
+
+
+    <color name="time">#000000</color>
+    <color name="selected_nav_color">#808080</color>
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_variant">#1976D2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#757575</color>
+    <color name="gauge_background">#F5F5F5</color>
+    <color name="gauge_needle">#2196F3</color>
+    <color name="fuel_bar_red">#FF5555</color>
+    <color name="gear_ready_green">#32D74B</color>
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#757575</color>
+
+</resources>

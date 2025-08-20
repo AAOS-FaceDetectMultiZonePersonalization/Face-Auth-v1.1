@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Gradient: black to a subtle reddish-dark tone to complement red icons -->
+    <gradient
+        android:startColor="#000000"
+        android:endColor="#1A0F0F"
+        android:angle="90" />
+    <!-- Rounded top corners, square bottom corners -->
+    <corners
+        android:topLeftRadius="40dp"
+        android:topRightRadius="40dp"
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="0dp" />
+</shape>

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_whole_background">
+
+    <!-- Battery Gauge (Left Side) -->
+    <ProgressBar
+        android:id="@+id/battery_gauge"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="148dp"
+        android:contentDescription="Battery Gauge"
+        android:max="100"
+        android:progress="65"
+        android:progressDrawable="@drawable/circular_progress"
+        android:rotation="-90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/battery_needle"
+        android:layout_width="8dp"
+        android:layout_height="96dp"
+        android:src="@drawable/needle"
+        app:layout_constraintStart_toStartOf="@id/battery_gauge"
+        app:layout_constraintEnd_toEndOf="@id/battery_gauge"
+        app:layout_constraintTop_toTopOf="@id/battery_gauge"
+        app:layout_constraintBottom_toBottomOf="@id/battery_gauge"
+        android:pivotX="50%"
+        android:pivotY="90%"
+        android:rotation="0"
+        android:contentDescription="Battery Needle" />
+
+    <TextView
+        android:id="@+id/battery_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="65%"
+        android:textColor="@color/text_primary"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintStart_toStartOf="@id/battery_gauge"
+        app:layout_constraintEnd_toEndOf="@id/battery_gauge"
+        app:layout_constraintTop_toBottomOf="@id/battery_gauge"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/battery_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Battery charge"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        android:alpha="0.8"
+        app:layout_constraintStart_toStartOf="@id/battery_text"
+        app:layout_constraintEnd_toEndOf="@id/battery_text"
+        app:layout_constraintTop_toBottomOf="@id/battery_text"
+        android:layout_marginTop="4dp" />
+
+    <!-- Left Road -->
+    <ImageView
+        android:id="@+id/left_road"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="460dp"
+        android:layout_marginBottom="176dp"
+        android:contentDescription="Left Road"
+        android:src="@drawable/vector_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Left Indicators -->
+    <LinearLayout
+        android:id="@+id/left_indicators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="168dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/fog_light_indicator"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Fog Light Indicator"
+            android:src="@drawable/rare_fog_lights" />
+
+        <ImageView
+            android:id="@+id/headlight_indicator_left"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Headlight Indicator"
+            android:src="@drawable/low_beam_headlights_white" />
+
+        <ImageView
+            android:id="@+id/light_indicator"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Light Indicator"
+            android:src="@drawable/light_white" />
+
+        <ImageView
+            android:id="@+id/parking_light_indicator"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Parking Light Indicator"
+            android:src="@drawable/parking_lights_white" />
+    </LinearLayout>
+
+    <!-- Right Indicators -->
+    <LinearLayout
+        android:id="@+id/right_indicators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="52dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/first_right_indicator"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Seatbelt Indicator"
+            android:src="@drawable/firstrighticon_grey" />
+
+        <ImageView
+            android:id="@+id/third_right_indicator"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Third Right Indicator"
+            android:src="@drawable/thirdrighticon" />
+    </LinearLayout>
+
+    <!-- Right Road -->
+    <ImageView
+        android:id="@+id/right_road"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="364dp"
+        android:layout_marginBottom="168dp"
+        android:contentDescription="Right Road"
+        android:src="@drawable/vector_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Driver Information (Right Side) -->
+    <LinearLayout
+        android:id="@+id/driver_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="120dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Driver Name Icon"
+                android:src="@drawable/driver" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/driver_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="John Doe"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="Driver Name"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Age Icon"
+                android:src="@drawable/age" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/age_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="30 yrs"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="Age"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Gender Icon"
+                android:src="@drawable/gender" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gender_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="Male"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="Gender"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Weight Icon"
+                android:src="@drawable/weight" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weight_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="70 kg"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:text="Weight"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Left Side Info (Temperature, Fuel Bars) -->
+    <LinearLayout
+        android:id="@+id/left_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/temperature_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100.6"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="°F"
+                android:textColor="@color/text_secondary"
+                android:textSize="20sp"
+                android:alpha="0.2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fuel_bars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:background="@color/fuel_bar_red"
+                android:layout_marginEnd="2dp" />
+
+            <View
+                android:id="@+id/fuel_bar_1"
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:background="@color/fuel_bar_red"
+                android:layout_marginEnd="2dp" />
+
+            <View
+                android:id="@+id/fuel_bar_2"
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:background="@color/fuel_bar_red"
+                android:layout_marginEnd="2dp" />
+
+            <View
+                android:id="@+id/fuel_bar_3"
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:background="@color/fuel_bar_red"
+                android:layout_marginEnd="2dp" />
+
+            <View
+                android:id="@+id/fuel_bar_4"
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:background="@color/fuel_bar_red"
+                android:layout_marginEnd="2dp" />
+
+            <View
+                android:id="@+id/fuel_bar_5"
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:background="@color/fuel_bar_red"
+                android:layout_marginEnd="2dp" />
+
+            <View
+                android:id="@+id/fuel_bar_6"
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:background="@color/fuel_bar_red" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Gear Status -->
+    <LinearLayout
+        android:id="@+id/gear_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/gear_ready"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ready"
+            android:textColor="@color/gear_ready_green"
+            android:textSize="20sp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/gear_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/gear_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:textColor="@color/text_secondary"
+            android:textSize="20sp"
+            android:alpha="0.2"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/gear_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N"
+            android:textColor="@color/text_secondary"
+            android:textSize="20sp"
+            android:alpha="0.2"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/gear_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D"
+            android:textColor="@color/text_secondary"
+            android:textSize="20sp"
+            android:alpha="0.2" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/car_image"
+        android:layout_width="456dp"
+        android:layout_height="621dp"
+        app:layout_constraintEnd_toStartOf="@+id/right_road"
+        app:layout_constraintStart_toEndOf="@+id/left_road"
+        app:srcCompat="@drawable/newcar_nolight"
+        tools:layout_editor_absoluteY="171dp"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

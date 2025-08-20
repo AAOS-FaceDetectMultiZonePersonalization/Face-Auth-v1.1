@@ -1,0 +1,56 @@
+android_app {
+    name: "FaceAuthAndroid",
+    srcs: [
+        "src/**/*.kt",
+    ],
+    resource_dirs: ["res"],
+    asset_dirs: ["assets"],
+    aaptflags: [
+        "-0 .tflite",
+    ],
+    jni_libs: [
+        "libtensorflowlite_jni",
+    ],
+    certificate: "platform",
+    platform_apis: true,
+    privileged: true,
+    manifest: "AndroidManifest.xml",
+
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "org.tensorflow_tensorflow-lite",
+        "org.tensorflow_tensorflow-lite-support",
+        "org.tensorflow_tensorflow-lite-api",
+        "kotlinx_coroutines_android",
+        "androidx.room_room-runtime",
+        "androidx.recyclerview_recyclerview",
+        "androidx.gridlayout_gridlayout",
+        "androidx.cardview_cardview",
+        "androidx.room_room-common",
+        "androidx.room_room-ktx",
+        "androidx.sqlite_sqlite",
+        "kotlin-stdlib",
+        "kotlinx_coroutines",
+        "androidx.annotation_annotation",
+        "androidx-constraintlayout_constraintlayout",
+        "android.car",
+        "kotlinx-coroutines-core",
+        "kotlinx-coroutines-android",
+    ],
+    plugins: [
+        "androidx.room_room-compiler-plugin",
+    ],
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+    overrides: [
+        "Launcher2",
+        "Launcher3",
+        "Launcher3QuickStep",
+        "CarLauncher",
+    ],
+}
+
+

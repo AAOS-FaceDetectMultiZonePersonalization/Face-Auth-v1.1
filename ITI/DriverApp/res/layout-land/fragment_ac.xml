@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_whole_background">
+
+    <!-- Wind Background Elements -->
+    <ImageView
+        android:id="@+id/windTop"
+        android:layout_width="596dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="60dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wind_t" />
+
+    <ImageView
+        android:id="@+id/windBottom"
+        android:layout_width="398dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="44dp"
+        android:adjustViewBounds="true"
+        android:scaleX="-1"
+        android:scaleY="-1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wind_t" />
+
+    <!-- Seat Images -->
+    <ImageView
+        android:id="@+id/leftSeat"
+        android:layout_width="342dp"
+        android:layout_height="360dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@id/rightSeat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/seatl" />
+
+    <ImageView
+        android:id="@+id/rightSeat"
+        android:layout_width="339dp"
+        android:layout_height="381dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/leftSeat"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/seat_r" />
+
+    <!-- Left Seat Controls -->
+    <TextView
+        android:id="@+id/leftFanSpeedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Fan Speed"
+        android:textColor="@color/time"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/leftSeat"
+        app:layout_constraintTop_toBottomOf="@id/leftSeat" />
+
+    <ImageView
+        android:id="@+id/leftFanSpeedIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@id/leftFanSpeedBar"
+        app:layout_constraintStart_toStartOf="@id/leftFanSpeedLabel"
+        app:layout_constraintTop_toTopOf="@id/leftFanSpeedBar"
+        app:srcCompat="@drawable/fan" />
+
+    <SeekBar
+        android:id="@+id/leftFanSpeedBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:max="5"
+        android:progress="3"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
+        app:layout_constraintEnd_toEndOf="@id/rightSeat"
+        app:layout_constraintStart_toEndOf="@id/leftFanSpeedIcon"
+        app:layout_constraintTop_toBottomOf="@id/leftFanSpeedLabel" />
+
+    <TextView
+        android:id="@+id/leftTempLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Temperature"
+        android:textColor="@color/time"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/leftTempBar"
+        app:layout_constraintStart_toStartOf="@id/leftFanSpeedLabel"
+        app:layout_constraintTop_toBottomOf="@id/leftFanSpeedBar" />
+
+    <TextView
+        android:id="@+id/leftTempValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22°C"
+        android:textColor="@color/time"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/leftTempBar"
+        app:layout_constraintStart_toStartOf="@id/leftSeat"
+        app:layout_constraintTop_toTopOf="@id/leftTempBar" />
+
+    <SeekBar
+        android:id="@+id/leftTempBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="30"
+        android:progress="22"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
+        app:layout_constraintEnd_toEndOf="@id/leftFanSpeedBar"
+        app:layout_constraintStart_toEndOf="@id/leftTempValue"
+        app:layout_constraintTop_toBottomOf="@id/leftTempLabel" />
+
+    <TextView
+        android:id="@+id/leftSeatTempLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Seat Temperature"
+        android:textColor="@color/time"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/leftSeatTempBar"
+        app:layout_constraintStart_toStartOf="@id/leftTempLabel"
+        app:layout_constraintTop_toBottomOf="@id/leftTempBar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22°C"
+        android:textColor="@color/time"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/leftSeatTempBar"
+        app:layout_constraintStart_toStartOf="@id/leftSeat"
+        app:layout_constraintTop_toTopOf="@id/leftSeatTempBar" />
+
+    <SeekBar
+        android:id="@+id/leftSeatTempBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="5"
+        android:progress="2"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
+        app:layout_constraintEnd_toEndOf="@id/leftTempBar"
+        app:layout_constraintStart_toEndOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/leftSeatTempLabel" />
+
+
+    <ImageView
+        android:id="@+id/autoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Light Indicator"
+        android:src="@drawable/light_red"
+        app:layout_constraintBottom_toBottomOf="@+id/leftSeat"
+        app:layout_constraintEnd_toStartOf="@+id/leftSeat"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.621" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

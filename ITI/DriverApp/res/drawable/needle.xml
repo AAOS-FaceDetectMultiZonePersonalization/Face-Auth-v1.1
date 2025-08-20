@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="10dp"
+    android:height="40dp"
+    android:viewportWidth="35"
+    android:viewportHeight="141">
+  <!-- Main needle shape (elongated triangle with curved base) -->
+  <path
+      android:pathData="M17.5,0L25,120C25,130 17.5,141 17.5,141C17.5,141 10,130 10,120L17.5,0Z"
+      android:fillType="evenOdd">
+    <aapt:attr name="android:fillColor">
+      <gradient
+          android:startX="17.5"
+          android:startY="0"
+          android:endX="17.5"
+          android:endY="141"
+          android:type="linear">
+        <item android:offset="0" android:color="#FFFF5555"/>
+        <item android:offset="1" android:color="#FFFF3333"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <!-- Subtle white stroke for contrast -->
+  <path
+      android:pathData="M17.5,0L25,120C25,130 17.5,141 17.5,141C17.5,141 10,130 10,120L17.5,0Z"
+      android:strokeWidth="0.5"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:strokeAlpha="0.8"
+      android:fillType="evenOdd"/>
+</vector>

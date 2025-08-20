@@ -1,0 +1,15 @@
+<resources>
+    <!-- Seat position movement limits -->
+    <dimen name="seat_max_forward">100dp</dimen>
+    <dimen name="seat_max_backward">-60dp</dimen>
+    <dimen name="seat_step_horizontal">10dp</dimen>
+
+    <!-- Backrest angle limits -->
+    <integer name="backrest_min_angle">75</integer>
+    <integer name="backrest_max_angle">100</integer>
+    <integer name="backrest_angle_step">1</integer>
+
+    <!-- Animation durations -->
+    <integer name="anim_short">150</integer>
+    <integer name="anim_medium">300</integer>
+</resources>

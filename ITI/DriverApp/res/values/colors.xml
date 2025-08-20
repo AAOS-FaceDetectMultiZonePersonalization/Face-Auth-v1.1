@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#673AB7</color> <!-- Deep Purple 500 -->
+    <color name="primary_variant">#512DA8</color> <!-- Deep Purple 700 -->
+    <color name="secondary">#00ACC1</color> <!-- Cyan 500 -->
+    <color name="secondary_variant">#00838F</color> <!-- Cyan 700 -->
+    <color name="surface">#FFFFFF</color> <!-- White for light theme -->
+    <color name="surface_dark">#1C2526</color> <!-- Dark gray for dark theme -->
+    <color name="on_surface">#212121</color> <!-- Dark text for light theme -->
+    <color name="on_surface_dark">#E0E0E0</color> <!-- Light text for dark theme -->
+    <color name="background">#F5F5F5</color> <!-- Light gray background -->
+    <color name="background_dark">#121212</color> <!-- Dark background -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="on_primary">#FFFFFF</color> <!-- White text on primary -->
+    <color name="on_secondary">#FFFFFF</color> <!-- White text on secondary -->
+
+
+    <color name="icons_colors">#ff3131</color>
+
+
+    <color name="blue">#2196F3</color>
+    <color name="green">#4CAF50</color>
+    <color name="yellow">#FFC107</color>
+    <color name="red">#F44336</color>
+    <color name="cyan">#01E6DE</color>
+    <color name="ready_green">#32D74B</color>
+    <color name="grey">#808080</color>
+    <color name="default_nav_color">#FF5555</color>
+
+
+
+
+    <color name="selected_nav_color">#FFFFFF</color>
+
+    <color name="time">#FFFFFFFF</color>
+    <color name="primary_blue">#42A5F5</color>
+    <color name="primary_blue_variant">#1E88E5</color>
+    <color name="gray">#B0B0B0</color>
+    <color name="gauge_background">#424242</color>
+    <color name="gauge_needle">#42A5F5</color>
+    <color name="fuel_bar_red">#FF5555</color>
+    <color name="gear_ready_green">#32D74B</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+</resources>

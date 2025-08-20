@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+         package="com.example.tf_face.lightmode">
+    <application android:hasCode="false" />
+    <overlay
+        android:targetPackage="com.example.tf_face"
+        android:targetName="FaceAuthAndroid"
+        android:isStatic="false"
+        android:priority="200" />
+</manifest>
